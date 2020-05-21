@@ -24,12 +24,13 @@ Show images:
 1. Screenshot
 2. Logo
 3. Default placeholder
-4. If everything else fails, defaults to placeholder
+4. If everything else fails, defaults to placeholder (second "url")
 {% endcomment %}
 
   <div class="{{ classes }}"
     style="background-image: url({{ screenshots | first | default: logo | default: placeholderScreen }}), url('{{ placeholderScreen }}');
       background-position: top center;
-      background-repeat: no-repeat; "
-  >
+      background-repeat: no-repeat; 
+      background-size: cover;
+      height:150px; ">
   </div>

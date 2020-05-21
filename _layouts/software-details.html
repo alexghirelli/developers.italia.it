@@ -639,7 +639,6 @@ layout: default
     <div class="row">
       <div class="owl-carousel col-10 offset-1 offset-sm-0 col-sm-12">
         {% for relsw in page.relatedSoftwares %}
-        {{ relsw }}
         {% assign relsw_description = relsw.publiccode.description[active_lang]
         | default: relsw.publiccode.description.en
         | default: relsw.publiccode.description.it %}
@@ -649,8 +648,8 @@ layout: default
 
 
           <div class="img-container">
-            <a href="{{ relsw_url }}" class="d-inline-block w-100 h-100">
-              {% capture swClasses %} w-100 h-100 {% endcapture %}
+            <a href="{{ relsw_url }}">
+              {% capture swClasses %} w-100 {% endcapture %}
               {% comment %}
                 Find a way to pass something like this:
                 codiceIPA = page.publiccode.it.riuso.codiceIPA
